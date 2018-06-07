@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/tv_received"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_bg_received"
+        android:paddingBottom="@dimen/dp_8"
+        android:paddingLeft="@dimen/dp_10"
+        android:paddingTop="@dimen/dp_8"
+        android:text="Received"
+        android:textColor="@color/color_received"
+        android:textSize="@dimen/dp_10" />
+
+    <TextView
+        android:id="@+id/tv_pending"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_bg_received"
+        android:paddingBottom="@dimen/dp_8"
+        android:paddingLeft="@dimen/dp_10"
+        android:paddingTop="@dimen/dp_8"
+        android:text="Pending"
+        android:textColor="@color/color_received"
+        android:textSize="@dimen/dp_10"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_90"
+        android:layout_marginBottom="@dimen/dp_5"
+        android:layout_marginTop="@dimen/dp_5"
+        android:background="@drawable/bg_pdf_creation"
+        android:gravity="center|left"
+        android:padding="@dimen/dp_10">
+
+
+        <LinearLayout
+            android:id="@+id/ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:text="500.00"
+                android:textColor="@color/color_pdf_price"
+                android:textSize="@dimen/dp_10" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:text="Ajay Kumar"
+                android:textColor="@color/color_pdf_name"
+                android:textSize="@dimen/dp_10" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:text="Sector 22, Noida"
+                android:textColor="@color/color_pdf_name"
+                android:textSize="@dimen/dp_10" />
+
+            <ImageView
+                android:id="@+id/iv_rate"
+                android:layout_width="@dimen/dp_70"
+                android:layout_height="@dimen/dp_20"
+                android:src="@drawable/pdf_star_4" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_booking_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:text="4:35 AM - 4:50 AM"
+                android:textColor="@color/color_pdf_name"
+                android:textSize="@dimen/dp_10" />
+
+            <TextView
+                android:id="@+id/tv_booking_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:text="Service ID: 0312312"
+                android:textColor="@color/color_price_time"
+                android:textSize="@dimen/dp_8" />
+
+            <TextView
+                android:id="@+id/tv_contact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:text="Contact: +919711887660"
+                android:textColor="@color/color_price_time"
+                android:textSize="@dimen/dp_8" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

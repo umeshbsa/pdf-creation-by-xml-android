@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="white">#ffffff</color>
+    <color name="color_bg_received">#F4F8FF</color>
+    <color name="color_received">#0D2F84</color>
+    <color name="color_pdf_price">#4A4B74</color>
+    <color name="color_price_time">#8F91A7</color>
+    <color name="color_pdf_name">#4A4B74</color>
+
+</resources>
