@@ -10,7 +10,9 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
@@ -33,11 +35,14 @@ public class MainActivity extends Activity {
 
 
     private List<PDFModel> pdfModels;
+    private TextView tvPath;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
+        tvPath = (TextView) findViewById(R.id.tv_path);
+
         findViewById(R.id.btn_create_pdf).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -187,6 +192,8 @@ public class MainActivity extends Activity {
                     progressDialog.dismiss();
 
                     if (filePath != null) {
+                        tvPath.setVisibility(View.VISIBLE);
+                        tvPath.setText("Your Pdf path : " + filePath);
                         Toast.makeText(MainActivity.this, "Final pdf file " + filePath, Toast.LENGTH_LONG).show();
                         sharePdf(filePath);
                     }
