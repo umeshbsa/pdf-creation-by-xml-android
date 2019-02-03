@@ -37,9 +37,7 @@ public class AppUtils {
         int measuredHeight = View.MeasureSpec.makeMeasureSpec(deviceHeight, View.MeasureSpec.EXACTLY);
         view.measure(measuredWidth, measuredHeight);
         view.layout(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
-
         Bitmap b = Bitmap.createBitmap(deviceWidth, deviceHeight, Bitmap.Config.ARGB_8888);
-
         Canvas c = new Canvas(b);
         view.draw(c);
         return getResizedBitmap(b, (measuredWidth * 80) / 100, (measuredHeight * 80) / 100);
@@ -62,7 +60,6 @@ public class AppUtils {
         if (!folder.exists()) {
             folder.mkdirs();
         }
-
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd_MM_yyyy_hh_mm_ss");
 
         String date = simpleDateFormat.format(Calendar.getInstance().getTime());

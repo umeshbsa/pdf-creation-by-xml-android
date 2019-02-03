@@ -1,6 +1,6 @@
 package com.app.pdfcreation.model;
 
-import com.app.pdfcreation.utils.PDFCreatorByXML;
+import com.app.pdfcreation.utils.PDFCreationUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,10 +55,15 @@ public class PDFModel {
         this.price = price;
     }
 
+    /**
+     * Create dummy PDF model
+     *
+     * @return PDF Models
+     */
 
     public static List<PDFModel> createDummyPdfModel() {
-        PDFCreatorByXML.filePath.clear();
-        PDFCreatorByXML.progressCount = 1;
+        PDFCreationUtils.filePath.clear();
+        PDFCreationUtils.progressCount = 1;
 
         boolean isFirstReceivedItem = false;
         List<PDFModel> pdfModels = new ArrayList<>();

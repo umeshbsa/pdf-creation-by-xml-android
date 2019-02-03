@@ -27,7 +27,8 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-public class PDFCreatorByXML {
+
+public class PDFCreationUtils {
 
 
     private int deviceHeight;
@@ -79,7 +80,7 @@ public class PDFCreatorByXML {
 
     /**
      * This is indicate to progressbar
-     * This is static because we have to define all object(PDFCreatorByXML class) within single variable
+     * This is static because we have to define all object(PDFCreationUtils class) within single variable
      */
     public static int TOTAL_PROGRESS_BAR;
 
@@ -91,7 +92,7 @@ public class PDFCreatorByXML {
 
     /**
      * This is store of all pdf file path.
-     * This is static because we have to define all object(PDFCreatorByXML class) within single variable
+     * This is static because we have to define all object(PDFCreationUtils class) within single variable
      */
     public static List<String> filePath = new ArrayList<>();
     private PdfCreationActivity activity;
@@ -106,7 +107,7 @@ public class PDFCreatorByXML {
      */
     private String pathForEveryPdfFile;
 
-    private PDFCreatorByXML() {
+    private PDFCreationUtils() {
     }
 
     /**
@@ -115,7 +116,7 @@ public class PDFCreatorByXML {
      * @param totalPDFModelSize this is total pdf list size during current sub list of pdf model
      * @param currentPDFIndex   This is define to number of pdf files
      */
-    public PDFCreatorByXML(PdfCreationActivity activity, List<PDFModel> currentPdfModels, int totalPDFModelSize, int currentPDFIndex) {
+    public PDFCreationUtils(PdfCreationActivity activity, List<PDFModel> currentPdfModels, int totalPDFModelSize, int currentPDFIndex) {
         this.activity = activity;
         this.mCurrentPDFModels = currentPdfModels;
         this.mCurrentPDFIndex = currentPDFIndex;
@@ -124,21 +125,13 @@ public class PDFCreatorByXML {
         int sizeInPixel = activity.getResources().getDimensionPixelSize(R.dimen.dp_90) +
                 activity.getResources().getDimensionPixelSize(R.dimen.dp_30);
 
-        /**
-         * Inflate parent view which contain app logo, 'MyEarnings and item row define by SECTOR'
-         */
+        // Inflate parent view which contain app logo, 'MyEarnings and item row define by SECTOR'
         mPDFCreationView = LayoutInflater.from(activity).inflate(R.layout.pdf_creation_view, null, false);
 
 
-        /**
-         * Number of item in per page
-         */
+        // Number of item in per page
         SECTOR = deviceHeight / sizeInPixel;
         TOTAL_PROGRESS_BAR = totalPDFModelSize / SECTOR;
-
-      /*  if (totalPDFModelSize > 0) {
-            TOTAL_PROGRESS_BAR = 1;
-        }*/
 
         mPDFCreationRV = (RecyclerView) mPDFCreationView.findViewById(R.id.recycler_view);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(activity);
@@ -151,20 +144,18 @@ public class PDFCreatorByXML {
 
     }
 
-    private IPdfCallback callback;
+    private PDFCallback callback;
 
     /**
      * Call from MainActivity
      *
-     * @param iPdfCallback
+     * @param callback
      */
-    public void createPDF(IPdfCallback iPdfCallback) {
-        this.callback = iPdfCallback;
+    public void createPDF(PDFCallback callback) {
+        this.callback = callback;
 
 
-        /**
-         * If pdf list size <= sector
-         */
+        // If pdf list size <= sector
         if (pdfModelListSize <= SECTOR) {
             NUMBER_OF_PAGE = 1;
 
@@ -173,19 +164,17 @@ public class PDFCreatorByXML {
             createPdf();
         } else {
 
-            /**
-             * If number of pdf list size>sector
-             * First Identify to NUMBER_OF_PAGE
-             */
+            // If number of pdf list size > sector
+            // First Identify to NUMBER_OF_PAGE
             NUMBER_OF_PAGE = pdfModelListSize / SECTOR;
             if (pdfModelListSize % SECTOR != 0) {
                 NUMBER_OF_PAGE++;
             }
 
-            /**
-             * Create pdf final map
-             * This is used to distribute list model of per page
-             */
+
+            // Create pdf final map
+            // This is used to distribute list model of per page
+
             Map<Integer, List<PDFModel>> listMap = createFinalData();
             for (int PAGE_INDEX = 1; PAGE_INDEX <= NUMBER_OF_PAGE; PAGE_INDEX++) {
                 List<PDFModel> list = listMap.get(PAGE_INDEX);
@@ -355,7 +344,7 @@ public class PDFCreatorByXML {
     }
 
 
-    public interface IPdfCallback {
+    public interface PDFCallback {
 
         void onProgress(int progress);
 

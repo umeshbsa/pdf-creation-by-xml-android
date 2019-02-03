@@ -3,4 +3,8 @@
 
     <string name="app_name">Pdf from XML Layout</string>
     <string name="create_pdf">Create PDF</string>
+    <string name="msg_progress_pdf">XML layout is in created PDF file. Please wait few moment.\nTotal PDF page :%s</string>
+    <string name="msg_progress_merger_pdf">All pdf file merge into one file. Please wait few moment. After done of mergig pdf file, go to pdf file path.</string>
+    <string name="error_file">Can\'t read pdf file</string>
+    <string name="send_to">Send mail...</string>
 </resources>

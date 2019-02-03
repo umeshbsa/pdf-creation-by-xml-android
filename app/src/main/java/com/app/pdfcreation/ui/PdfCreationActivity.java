@@ -20,7 +20,7 @@ import com.app.pdfcreation.BuildConfig;
 import com.app.pdfcreation.R;
 import com.app.pdfcreation.adapter.PdfCreateAdapter;
 import com.app.pdfcreation.model.PDFModel;
-import com.app.pdfcreation.utils.PDFCreatorByXML;
+import com.app.pdfcreation.utils.PDFCreationUtils;
 import com.app.pdfcreation.utils.PdfBitmapCache;
 
 import java.io.File;
@@ -31,7 +31,6 @@ import java.util.List;
 public class PdfCreationActivity extends AppCompatActivity {
 
 
-    //private PDFCreatorByXML pdfCreator;
     private boolean IS_MANY_PDF_FILE;
 
     /**
@@ -46,11 +45,16 @@ public class PdfCreationActivity extends AppCompatActivity {
     private ProgressDialog progressDialog;
 
 
+    /**
+     * Store all dummy PDF models
+     */
     private List<PDFModel> pdfModels;
     private TextView btnPdfPath;
 
 
-    private RecyclerView rvShowDemo;
+    /**
+     * Share PDF file
+     */
     private Button btnSharePdfFile;
 
     @Override
@@ -69,7 +73,7 @@ public class PdfCreationActivity extends AppCompatActivity {
         pdfModels = PDFModel.createDummyPdfModel();
 
 
-        rvShowDemo = (RecyclerView) findViewById(R.id.rv_show_demo);
+        RecyclerView rvShowDemo = (RecyclerView) findViewById(R.id.rv_show_demo);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
         rvShowDemo.setLayoutManager(mLayoutManager);
         PdfCreateAdapter pdfRootAdapter = new PdfCreateAdapter();
@@ -117,7 +121,7 @@ public class PdfCreationActivity extends AppCompatActivity {
 
     private void createProgressBarForPDFCreation(int maxProgress) {
         progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("XML layout is in created PDF file. Please wait few moment.\nTotal PDF page : " + maxProgress);
+        progressDialog.setMessage(String.format(getString(R.string.msg_progress_pdf), String.valueOf(maxProgress)));
         progressDialog.setCancelable(false);
         progressDialog.setIndeterminate(false);
         progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
@@ -127,7 +131,7 @@ public class PdfCreationActivity extends AppCompatActivity {
 
     private void createProgressBarForMergePDF() {
         progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("All pdf file merge into one file. Please wait few moment. After done of mergig pdf file, go to pdf file path.");
+        progressDialog.setMessage(getString(R.string.msg_progress_merger_pdf));
         progressDialog.setCancelable(false);
         progressDialog.show();
     }
@@ -142,11 +146,11 @@ public class PdfCreationActivity extends AppCompatActivity {
         List<PDFModel> pdfDataList = pdfModels.subList(START, END);
         PdfBitmapCache.clearMemory();
         PdfBitmapCache.initBitmapCache(getApplicationContext());
-        final PDFCreatorByXML pdfCreator = new PDFCreatorByXML(PdfCreationActivity.this, pdfDataList, LIST_SIZE, NO_OF_PDF_FILE);
+        final PDFCreationUtils pdfCreationUtils = new PDFCreationUtils(PdfCreationActivity.this, pdfDataList, LIST_SIZE, NO_OF_PDF_FILE);
         if (NO_OF_PDF_FILE == 1) {
-            createProgressBarForPDFCreation(PDFCreatorByXML.TOTAL_PROGRESS_BAR);
+            createProgressBarForPDFCreation(PDFCreationUtils.TOTAL_PROGRESS_BAR);
         }
-        pdfCreator.createPDF(new PDFCreatorByXML.IPdfCallback() {
+        pdfCreationUtils.createPDF(new PDFCreationUtils.PDFCallback() {
 
             @Override
             public void onProgress(final int i) {
@@ -155,21 +159,18 @@ public class PdfCreationActivity extends AppCompatActivity {
 
             @Override
             public void onCreateEveryPdfFile() {
-                /**
-                 * Execute may pdf files and this is depend on NO_OF_FILE
-                 */
+                // Execute may pdf files and this is depend on NO_OF_FILE
                 if (IS_MANY_PDF_FILE) {
                     NO_OF_PDF_FILE++;
                     if (NO_OF_FILE == NO_OF_PDF_FILE - 1) {
 
                         progressDialog.dismiss();
                         createProgressBarForMergePDF();
-                        pdfCreator.downloadAndCombinePDFs();
+                        pdfCreationUtils.downloadAndCombinePDFs();
                     } else {
 
-                        /**
-                         *  This is identify to manage sub list of current pdf model list data with START and END
-                         */
+                        // This is identify to manage sub list of current pdf model list data with START and END
+
                         START = END;
                         if (LIST_SIZE % SECTOR != 0) {
                             if (NO_OF_FILE == NO_OF_PDF_FILE) {
@@ -181,14 +182,11 @@ public class PdfCreationActivity extends AppCompatActivity {
                     }
 
                 } else {
-                    /**
-                     * Merge one pdf file when all file is downloaded
-                     */
-
+                    // Merge one pdf file when all file is downloaded
                     progressDialog.dismiss();
 
                     createProgressBarForMergePDF();
-                    pdfCreator.downloadAndCombinePDFs();
+                    pdfCreationUtils.downloadAndCombinePDFs();
                 }
 
             }
@@ -231,9 +229,9 @@ public class PdfCreationActivity extends AppCompatActivity {
         uris.add(u);
         emailIntent.putParcelableArrayListExtra(Intent.EXTRA_STREAM, uris);
         try {
-            startActivity(Intent.createChooser(emailIntent, "Send mail..."));
+            startActivity(Intent.createChooser(emailIntent, getString(R.string.send_to)));
         } catch (ActivityNotFoundException e) {
-            Toast.makeText(this, "Can't read pdf file", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.error_file), Toast.LENGTH_SHORT).show();
         }
     }
 

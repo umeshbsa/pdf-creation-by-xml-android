@@ -5,6 +5,9 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.support.v4.util.LruCache;
 
+/**
+ * Cache all PDF image with index
+ */
 public class PdfBitmapCache {
 
     private static LruCache<Integer, Bitmap> memoryCache = null;

@@ -16,44 +16,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="737be80c-2daa-4282-a805-3b8cb85ec359" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_cardview_v7_27_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/utils/AppUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_runtime_1_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_runtime_1_1_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_livedata_core_1_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_livedata_core_1_1_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_runtime_1_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_runtime_1_1_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_viewmodel_1_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_viewmodel_1_1_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_27_1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_27_1_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_appcompat_v7_27_1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_appcompat_v7_27_1_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_recyclerview_v7_27_1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_recyclerview_v7_27_1_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_compat_27_1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_compat_27_1_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_ui_27_1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_ui_27_1_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_utils_27_1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_utils_27_1_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_fragment_27_1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_fragment_27_1_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_vector_drawable_27_1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_vector_drawable_27_1_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/pdf-creation-by-xml-android.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/ui/PdfCreationActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/PDFCreatorByXML.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/utils/PDFCreatorByXML.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/PDFModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/model/PDFModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/PdfBitmapCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/utils/PdfBitmapCache.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/PdfCreateAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/adapter/PdfCreateAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bg_pdf_creation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_pdf_creation.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/main_activity.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_pdf_creation.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/pdf_creation_adapter_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_pdf_creation.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/pdf_creation_child_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/pdf_creation_view.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/pdf_creation_parent_view.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/model/PDFModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/model/PDFModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/ui/PdfCreationActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/ui/PdfCreationActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/utils/AppUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/utils/AppUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/utils/PDFCreatorByXML.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/utils/PDFCreationUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/utils/PdfBitmapCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/utils/PdfBitmapCache.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -77,11 +45,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PDFCreatorByXML.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/utils/PDFCreatorByXML.java">
+      <file leaf-file-name="PDFCreationUtils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/utils/PDFCreationUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="345" selection-start-line="345" selection-end-line="345" />
+            <state relative-caret-position="315">
+              <caret line="346" column="26" lean-forward="true" selection-start-line="346" selection-start-column="26" selection-end-line="346" selection-end-column="26" />
               <folding>
                 <element signature="e#3763#3823#0" expanded="true" />
                 <element signature="e#3842#3902#0" expanded="true" />
@@ -105,8 +73,8 @@
       <file leaf-file-name="AppUtils.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/utils/AppUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="58" column="38" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="38" />
+            <state relative-caret-position="191">
+              <caret line="60" column="21" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -114,11 +82,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PDFModel.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PDFModel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/model/PDFModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="64" column="30" selection-start-line="64" selection-start-column="30" selection-end-line="64" selection-end-column="30" />
+            <state relative-caret-position="310">
+              <caret line="60" column="25" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -126,15 +94,52 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PdfCreationActivity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PdfCreationActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/ui/PdfCreationActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="119" column="95" selection-start-line="119" selection-start-column="95" selection-end-line="119" selection-end-column="95" />
+            <state relative-caret-position="-221">
+              <caret line="160" column="46" selection-start-line="160" selection-start-column="46" selection-end-line="160" selection-end-column="46" />
               <folding>
+                <element signature="e#2009#2162#0" expanded="true" />
+                <element signature="e#2161#2162#0" expanded="true" />
+                <element signature="e#3804#3840#0" expanded="true" />
+                <element signature="e#4257#4300#0" expanded="true" />
                 <element signature="e#4840#4841#0" expanded="true" />
                 <element signature="e#4901#4902#0" expanded="true" />
+                <element signature="e#8061#8088#0" expanded="true" />
+                <element signature="e#8160#8190#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="114" selection-start-line="5" selection-start-column="114" selection-end-line="5" selection-end-column="114" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PdfBitmapCache.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/utils/PdfBitmapCache.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
+              <folding>
+                <element signature="e#1162#1163#0" expanded="true" />
+                <element signature="e#1205#1206#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PdfCreateAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/adapter/PdfCreateAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-725">
+              <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -2423,7 +2428,6 @@
       <list>
         <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/ui/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
@@ -2432,10 +2436,13 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/adapter_pdf_creation.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/adapter/PdfCreateAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_pdf_creation.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/utils/AppUtils.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/utils/PDFCreatorByXML.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/ui/PdfCreationActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/model/PDFModel.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/utils/AppUtils.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/utils/PdfBitmapCache.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/utils/PDFCreatorByXML.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/utils/PDFCreationUtils.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/ui/PdfCreationActivity.java" />
       </list>
     </option>
   </component>
@@ -2708,7 +2715,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="57" y="-4" width="1309" height="772" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="Android Profiler" order="7" />
       <window_info id="Build Variants" order="2" side_tool="true" />
@@ -2729,10 +2735,10 @@
       <window_info anchor="right" id="Preview" order="3" weight="0.4411997" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3276923" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.23692308" />
       <window_info id="Captures" order="2" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15469614" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32923076" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24704026" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3276923" />
       <window_info anchor="right" id="Gradle" order="3" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -2822,7 +2828,7 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/utils/PDFCreatorByXML.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/utils/PDFCreationUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4575">
           <caret line="332" column="44" selection-start-line="332" selection-start-column="40" selection-end-line="332" selection-end-column="44" />
@@ -2897,7 +2903,7 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/utils/PDFCreatorByXML.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/utils/PDFCreationUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4575">
           <caret line="332" column="44" selection-start-line="332" selection-start-column="40" selection-end-line="332" selection-end-column="44" />
@@ -2975,13 +2981,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -3055,13 +3054,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/adapter/PdfCreateAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_pdf_creation.xml">
       <provider editor-type-id="android-designer2">
         <state />
@@ -3077,13 +3069,6 @@
             <element signature="e#2063#2076#0" expanded="true" />
             <element signature="e#2183#2196#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/utils/PdfBitmapCache.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -3107,10 +3092,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/utils/PDFCreatorByXML.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/adapter/PdfCreateAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="345" selection-start-line="345" selection-end-line="345" />
+        <state relative-caret-position="-725">
+          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/model/PDFModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="60" column="25" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="114" selection-start-line="5" selection-start-column="114" selection-end-line="5" selection-end-column="114" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/utils/AppUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="60" column="21" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/utils/PdfBitmapCache.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
+          <folding>
+            <element signature="e#1162#1163#0" expanded="true" />
+            <element signature="e#1205#1206#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/utils/PDFCreationUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="346" column="26" lean-forward="true" selection-start-line="346" selection-start-column="26" selection-end-line="346" selection-end-column="26" />
           <folding>
             <element signature="e#3763#3823#0" expanded="true" />
             <element signature="e#3842#3902#0" expanded="true" />
@@ -3132,31 +3162,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/ui/PdfCreationActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="119" column="95" selection-start-line="119" selection-start-column="95" selection-end-line="119" selection-end-column="95" />
+        <state relative-caret-position="-221">
+          <caret line="160" column="46" selection-start-line="160" selection-start-column="46" selection-end-line="160" selection-end-column="46" />
           <folding>
+            <element signature="e#2009#2162#0" expanded="true" />
+            <element signature="e#2161#2162#0" expanded="true" />
+            <element signature="e#3804#3840#0" expanded="true" />
+            <element signature="e#4257#4300#0" expanded="true" />
             <element signature="e#4840#4841#0" expanded="true" />
             <element signature="e#4901#4902#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/utils/AppUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="58" column="38" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/app/pdfcreation/model/PDFModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="64" column="30" selection-start-line="64" selection-start-column="30" selection-end-line="64" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#8061#8088#0" expanded="true" />
+            <element signature="e#8160#8190#0" expanded="true" />
           </folding>
         </state>
       </provider>
