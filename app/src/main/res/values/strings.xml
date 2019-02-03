@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string name="app_name">Pdf from XML Layout</string>
+    <string name="create_pdf">Create PDF</string>
 </resources>

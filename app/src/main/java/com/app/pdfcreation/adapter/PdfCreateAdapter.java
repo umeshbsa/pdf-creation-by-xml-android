@@ -1,4 +1,4 @@
-package com.app.pdfcreation;
+package com.app.pdfcreation.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -6,6 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.app.pdfcreation.R;
+import com.app.pdfcreation.model.PDFModel;
 
 import java.util.List;
 
@@ -16,7 +19,7 @@ public class PdfCreateAdapter extends RecyclerView.Adapter<PdfCreateAdapter.MyVi
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.pdf_creation_adapter_item, parent, false);
+                .inflate(R.layout.item_pdf_creation, parent, false);
         return new MyViewHolder(itemView);
     }
 
@@ -30,11 +33,7 @@ public class PdfCreateAdapter extends RecyclerView.Adapter<PdfCreateAdapter.MyVi
                 holder.mReceivedTV.setVisibility(View.GONE);
             }
 
-            if (model.isPending()) {
-                holder.mPendingTV.setVisibility(View.VISIBLE);
-            } else {
-                holder.mPendingTV.setVisibility(View.GONE);
-            }
+            holder.mPriceTV.setText(model.getPrice());
             holder.mNameTV.setText(model.getName());
             int ratingDrawable = getRatingImage(model.getRating());
             holder.mRateIM.setImageResource(ratingDrawable);
@@ -93,14 +92,14 @@ public class PdfCreateAdapter extends RecyclerView.Adapter<PdfCreateAdapter.MyVi
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         private final TextView mReceivedTV;
-        private final TextView mPendingTV;
         private final TextView mNameTV;
         private final ImageView mRateIM;
+        private final TextView mPriceTV;
 
         public MyViewHolder(View view) {
             super(view);
+            mPriceTV = (TextView) view.findViewById(R.id.tv_price);
             mReceivedTV = (TextView) view.findViewById(R.id.tv_received);
-            mPendingTV = (TextView) view.findViewById(R.id.tv_pending);
             mNameTV = (TextView) view.findViewById(R.id.tv_name);
             mRateIM = (ImageView) view.findViewById(R.id.iv_rate);
         }

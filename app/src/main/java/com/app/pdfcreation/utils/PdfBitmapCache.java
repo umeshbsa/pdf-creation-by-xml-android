@@ -1,4 +1,4 @@
-package com.app.pdfcreation;
+package com.app.pdfcreation.utils;
 
 import android.app.ActivityManager;
 import android.content.Context;

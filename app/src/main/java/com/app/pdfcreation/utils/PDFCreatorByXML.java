@@ -1,17 +1,20 @@
-package com.app.pdfcreation;
+package com.app.pdfcreation.utils;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.pdf.PdfDocument;
-import android.os.Environment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.RelativeLayout;
+
+import com.app.pdfcreation.R;
+import com.app.pdfcreation.adapter.PdfCreateAdapter;
+import com.app.pdfcreation.model.PDFModel;
+import com.app.pdfcreation.ui.PdfCreationActivity;
 
 import org.apache.pdfbox.io.MemoryUsageSetting;
 import org.apache.pdfbox.multipdf.PDFMergerUtility;
@@ -27,7 +30,6 @@ import java.util.Map;
 public class PDFCreatorByXML {
 
 
-    private RelativeLayout mAppLogoRL;
     private int deviceHeight;
     private int deviceWidth;
 
@@ -46,7 +48,7 @@ public class PDFCreatorByXML {
     /**
      * This is define to how many create number of row in per page
      */
-    private int SECTOR = 7; // default value
+    private int SECTOR = 8; // default value
 
     /**
      * Total number of page in per file
@@ -56,7 +58,7 @@ public class PDFCreatorByXML {
     /**
      * PDFModel data with list
      */
-    private List<PDFModel> pdfModels;
+    private List<PDFModel> mCurrentPDFModels;
 
     /**
      * Adapter for row item
@@ -67,15 +69,13 @@ public class PDFCreatorByXML {
      * This is parent view
      * In this view we have contain App logo, 'MyEarnings' and first row item from PdfCreateAdapter inflate
      */
-    private View parentView;
-    private RecyclerView parentRV;
+    private View mPDFCreationView;
+    private RecyclerView mPDFCreationRV;
 
     /**
      * This is child view
      * In this view we have to create all items row
      */
-    private View childView;
-    private RecyclerView childRV;
 
     /**
      * This is indicate to progressbar
@@ -87,14 +87,14 @@ public class PDFCreatorByXML {
      * This is indicate to number of pdf files.
      * This all files is merge with one single pdf file
      */
-    private int PDF_INDEX;
+    private int mCurrentPDFIndex;
 
     /**
      * This is store of all pdf file path.
      * This is static because we have to define all object(PDFCreatorByXML class) within single variable
      */
     public static List<String> filePath = new ArrayList<>();
-    private MainActivity activity;
+    private PdfCreationActivity activity;
 
     /**
      * This is final merge pdf file path
@@ -111,14 +111,14 @@ public class PDFCreatorByXML {
 
     /**
      * @param activity
-     * @param pdfModels       list of pdfmodel for every file
-     * @param TOTAl_LIST_SIZE this is total pdf list size during current sub list of pdf model
-     * @param PDF_INDEX       This is define to number of pdf files
+     * @param currentPdfModels  list of currentPdfModels for every file
+     * @param totalPDFModelSize this is total pdf list size during current sub list of pdf model
+     * @param currentPDFIndex   This is define to number of pdf files
      */
-    public PDFCreatorByXML(MainActivity activity, List<PDFModel> pdfModels, int TOTAl_LIST_SIZE, int PDF_INDEX) {
+    public PDFCreatorByXML(PdfCreationActivity activity, List<PDFModel> currentPdfModels, int totalPDFModelSize, int currentPDFIndex) {
         this.activity = activity;
-        this.pdfModels = pdfModels;
-        this.PDF_INDEX = PDF_INDEX;
+        this.mCurrentPDFModels = currentPdfModels;
+        this.mCurrentPDFIndex = currentPDFIndex;
         getWH();
         createForEveryPDFFilePath();
         int sizeInPixel = activity.getResources().getDimensionPixelSize(R.dimen.dp_90) +
@@ -127,65 +127,48 @@ public class PDFCreatorByXML {
         /**
          * Inflate parent view which contain app logo, 'MyEarnings and item row define by SECTOR'
          */
-        parentView = LayoutInflater.from(activity).inflate(R.layout.pdf_creation_parent_view, null, false);
-        mAppLogoRL = (RelativeLayout) parentView.findViewById(R.id.rl_logo);
+        mPDFCreationView = LayoutInflater.from(activity).inflate(R.layout.pdf_creation_view, null, false);
 
-        /**
-         * Visible only first pdf file
-         */
-        if (PDF_INDEX == 1) {
-            mAppLogoRL.setVisibility(View.VISIBLE);
-        } else {
-            mAppLogoRL.setVisibility(View.GONE);
-        }
-
-        /**
-         * This is inflate of item row
-         */
-        childView = LayoutInflater.from(activity).inflate(R.layout.pdf_creation_child_view, null);
 
         /**
          * Number of item in per page
          */
         SECTOR = deviceHeight / sizeInPixel;
-        TOTAL_PROGRESS_BAR = TOTAl_LIST_SIZE / SECTOR;
+        TOTAL_PROGRESS_BAR = totalPDFModelSize / SECTOR;
 
-        if (TOTAl_LIST_SIZE > 0) {
+      /*  if (totalPDFModelSize > 0) {
             TOTAL_PROGRESS_BAR = 1;
-        }
+        }*/
 
-        parentRV = (RecyclerView) parentView.findViewById(R.id.recycler_view);
+        mPDFCreationRV = (RecyclerView) mPDFCreationView.findViewById(R.id.recycler_view);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(activity);
-        parentRV.setLayoutManager(mLayoutManager);
-
-
-        childRV = (RecyclerView) childView.findViewById(R.id.recycler_view);
-        RecyclerView.LayoutManager mLayoutManager1 = new LinearLayoutManager(activity);
-        childRV.setLayoutManager(mLayoutManager1);
+        mPDFCreationRV.setLayoutManager(mLayoutManager);
 
         pdfRootAdapter = new PdfCreateAdapter();
 
         document = new PdfDocument();
-        pdfModelListSize = pdfModels.size();
+        pdfModelListSize = currentPdfModels.size();
 
     }
 
     private IPdfCallback callback;
 
     /**
-     * Call from MyPaymentListActivity
+     * Call from MainActivity
      *
      * @param iPdfCallback
      */
     public void createPDF(IPdfCallback iPdfCallback) {
         this.callback = iPdfCallback;
 
+
         /**
          * If pdf list size <= sector
          */
         if (pdfModelListSize <= SECTOR) {
             NUMBER_OF_PAGE = 1;
-            bitmapOfView = findParentViewBitmap(pdfModels);
+
+            bitmapOfView = AppUtils.findViewBitmap(mCurrentPDFModels, deviceWidth, deviceHeight, pdfRootAdapter, mPDFCreationRV, mPDFCreationView);
             PdfBitmapCache.addBitmapToMemoryCache(NUMBER_OF_PAGE, bitmapOfView);
             createPdf();
         } else {
@@ -206,11 +189,7 @@ public class PDFCreatorByXML {
             Map<Integer, List<PDFModel>> listMap = createFinalData();
             for (int PAGE_INDEX = 1; PAGE_INDEX <= NUMBER_OF_PAGE; PAGE_INDEX++) {
                 List<PDFModel> list = listMap.get(PAGE_INDEX);
-                if (PAGE_INDEX == 1) {
-                    bitmapOfView = findParentViewBitmap(list);
-                } else {
-                    bitmapOfView = findChildViewBitmap(list);
-                }
+                bitmapOfView = AppUtils.findViewBitmap(list, deviceWidth, deviceHeight, pdfRootAdapter, mPDFCreationRV, mPDFCreationView);
                 PdfBitmapCache.addBitmapToMemoryCache(PAGE_INDEX, bitmapOfView);
             }
             createPdf();
@@ -234,7 +213,7 @@ public class PDFCreatorByXML {
                     END = START + pdfModelListSize % SECTOR;
                 }
             }
-            List<PDFModel> list = pdfModels.subList(START, END);
+            List<PDFModel> list = mCurrentPDFModels.subList(START, END);
             START = END;
             END = SECTOR + END;
             map.put(INDEX, list);
@@ -242,60 +221,6 @@ public class PDFCreatorByXML {
         }
         return map;
     }
-
-    /**
-     * Adapter set all data by model then create bitmap of this view
-     *
-     * @param list pdf list - define by per NUMBER_OF_PAGE
-     * @return
-     */
-    private Bitmap findParentViewBitmap(final List<PDFModel> list) {
-        pdfRootAdapter.setListData(list);
-        parentRV.setAdapter(pdfRootAdapter);
-        return getViewBitmap(parentView);
-    }
-
-    /**
-     * Adapter set all data by model then create bitmap of this view
-     *
-     * @param list pdf list - define by per NUMBER_OF_PAGE
-     * @return
-     */
-    private Bitmap findChildViewBitmap(final List<PDFModel> list) {
-        pdfRootAdapter.setListData(list);
-        childRV.setAdapter(pdfRootAdapter);
-        return getViewBitmap(childView);
-    }
-
-
-    /**
-     * @param view this is pass from parent or child view and create bitmap with current loaded data
-     * @return
-     */
-    private Bitmap getViewBitmap(View view) {
-        int measuredWidth = View.MeasureSpec.makeMeasureSpec(deviceWidth, View.MeasureSpec.EXACTLY);
-        int measuredHeight = View.MeasureSpec.makeMeasureSpec(deviceHeight, View.MeasureSpec.EXACTLY);
-        view.measure(measuredWidth, measuredHeight);
-        view.layout(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
-
-        Bitmap b = Bitmap.createBitmap(deviceWidth, deviceHeight, Bitmap.Config.ARGB_8888);
-
-        Canvas c = new Canvas(b);
-        view.draw(c);
-        return getResizedBitmap(b, (measuredWidth * 80) / 100, (measuredHeight * 80) / 100);
-    }
-
-    public Bitmap getResizedBitmap(Bitmap image, int width, int height) {
-
-        float bitmapRatio = (float) width / (float) height;
-        if (bitmapRatio > 1) {
-            height = (int) (width / bitmapRatio);
-        } else {
-            width = (int) (height * bitmapRatio);
-        }
-        return Bitmap.createScaledBitmap(image, width, height, true);
-    }
-
 
     /**
      * Create pdf from view bitmap
@@ -307,17 +232,8 @@ public class PDFCreatorByXML {
             @Override
             public void run() {
                 for (int PAGE_INDEX = 1; PAGE_INDEX <= NUMBER_OF_PAGE; PAGE_INDEX++) {
-                    final Bitmap b = PdfBitmapCache.getBitmapFromMemCache(PAGE_INDEX);
 
-                    if (PDF_INDEX == 1) {
-                        activity.runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                if (callback != null)
-                                    callback.onStart();
-                            }
-                        });
-                    }
+                    final Bitmap b = PdfBitmapCache.getBitmapFromMemCache(PAGE_INDEX);
                     PdfDocument.PageInfo pageInfo = new PdfDocument.PageInfo.Builder(b.getWidth(), b.getHeight(), PAGE_INDEX).create();
                     PdfDocument.Page page = document.startPage(pageInfo);
                     Canvas canvas = page.getCanvas();
@@ -344,19 +260,16 @@ public class PDFCreatorByXML {
                     activity.runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            int progress = (progressCount++ * 100) / TOTAL_PROGRESS_BAR;
-                            if (progress > 90) {
-                                progress = 90;
-                            }
-                            callback.onProgress(progress);
+                            callback.onProgress(progressCount++);
                         }
                     });
+
                     if (PAGE_INDEX == NUMBER_OF_PAGE) {
                         document.close();
                         activity.runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                callback.onExecute();
+                                callback.onCreateEveryPdfFile();
                             }
                         });
                     }
@@ -375,16 +288,7 @@ public class PDFCreatorByXML {
             @Override
             public void run() {
 
-                if (PDF_INDEX == 1) {
-                    activity.runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            if (callback != null) {
-                                callback.onProgress(100);
-                            }
-                        }
-                    });
-
+                if (mCurrentPDFIndex == 1) {
                     activity.runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -393,6 +297,7 @@ public class PDFCreatorByXML {
                             }
                         }
                     });
+
                 } else {
                     try {
 
@@ -423,15 +328,6 @@ public class PDFCreatorByXML {
                         @Override
                         public void run() {
                             if (callback != null) {
-                                callback.onProgress(100);
-                            }
-                        }
-                    });
-
-                    activity.runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            if (callback != null) {
                                 callback.onComplete(finalPdfFile);
                             }
                         }
@@ -442,26 +338,12 @@ public class PDFCreatorByXML {
     }
 
     private void createForEveryPDFFilePath() {
-        String foldername = "pdf_creation_by_xml";
-        File folder = new File(Environment.getExternalStorageDirectory() + "/" + foldername);
-        if (!folder.exists()) {
-            folder.mkdirs();
-        }
-        if (PDF_INDEX == 1) {
-            pathForEveryPdfFile = folder + File.separator + "PDF_Creation.pdf";
-        } else {
-            pathForEveryPdfFile = folder + File.separator + "PDF_Creation_" + PDF_INDEX + ".pdf";
-        }
+        pathForEveryPdfFile = AppUtils.createPDFPath();
         filePath.add(pathForEveryPdfFile);
     }
 
     private String createFinalPdfFilePath() {
-        String bankName = "pdf_creation_by_xml";
-        File folder = new File(Environment.getExternalStorageDirectory() + "/" + bankName);
-        if (!folder.exists()) {
-            folder.mkdirs();
-        }
-        finalPdfFile = folder + File.separator + "PDF_Creation.pdf";
+        finalPdfFile = AppUtils.createPDFPath();
         return finalPdfFile;
     }
 
@@ -474,11 +356,10 @@ public class PDFCreatorByXML {
 
 
     public interface IPdfCallback {
-        void onStart();
 
         void onProgress(int progress);
 
-        void onExecute();
+        void onCreateEveryPdfFile();
 
         void onComplete(String filePath);
 

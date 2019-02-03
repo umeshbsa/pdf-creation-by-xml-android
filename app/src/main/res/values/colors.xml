@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="white">#ffffff</color>
-    <color name="color_bg_received">#F4F8FF</color>
-    <color name="color_received">#0D2F84</color>
-    <color name="color_pdf_price">#4A4B74</color>
-    <color name="color_price_time">#8F91A7</color>
-    <color name="color_pdf_name">#4A4B74</color>
+    <color name="colorPrimary">#097E14</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="color_808080">#808080</color>
+
+    <color name="color_white">#ffffff</color>
+    <color name="color_black">#000000</color>
+    <color name="color_green">#097E14</color>
+    <color name="color_fb">#3441C6</color>
+    <color name="color_summer">#D15427</color>
+    <color name="color_winter">#005173</color>
+    <color name="color_light_gray">#D3D3D3</color>
 
 </resources>
